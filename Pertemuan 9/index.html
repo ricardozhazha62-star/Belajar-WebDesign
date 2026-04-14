@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h4>Form Pendaftaran Kursus</h4>
+    </div>
+    <div class="card-body">
+        <div class="mb-4">
+            <div class="progress">
+                <div id="progressBar" class="progress-bar" style="width : 33%;"></div>
+                </div>
+                </div>
+                
+                <form id="multistepform">
+                    <div class="step" id="step1">
+                        <h5>Data Peserta</h5>
+
+                      <div class="mb-3">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>No KTP</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>Agama</label>
+                        <select class="form-control" required>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                            </select>
+
+                         <div class="mb-3">
+                        <label>Agama</label>
+                        <select class="form-control" required>
+                            <option value="Laki Laki">Laki Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                            </select>
+
+                             <div class="mb-3">
+                                <label>Jenis Tinggal</label>
+                            </div>
+                        
+
+                            <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Rumah
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    Kos
+  </label>
+</div>
+
+                         <div class="mb-3">
+                        <label>Alamat</label>
+                        <textarea class="form-control" required></textarea>
+                       </div>
+                            
+                     
+
+                        <div class="row">
+                        <div class="mb-3 col-md-6">
+                        <label>Kelurahan</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+                          <div class="mb-3 col-md-6">
+                        <label>Kabupaten/Kota</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+
+                        <div class="row">
+                        <div class="mb-3 col-md-6">
+                        <label>WHatsapp</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+                          <div class="mb-3 col-md-6">
+                        <label>Sosial Media</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+
+                        <div class="row">
+                         <div class="mb-3">
+                        <label>Pendidikan terakhir</label>
+                        <select class="form-control" required>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="S1">S1</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="S2">S2</option>
+                            </select>
+
+                            <div class="mb-3">
+                                <label>Status Saat Ini</label>
+                            </div>
+                        
+                            <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Belum bekerja
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    Bekerja
+  
+
+<button type="button" class="btn btn-primary" onclick="nextstep(1)">Next</button>
+
+
+                        
+
+                       
+
+
+
+
+
+
+
+                        </div>
+
+                    <div class="step d-none"  id="step3">
+                <h6>Data Orang tua (ayah)</h6>
+
+                      <div class="mb-3">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>No KTP</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" required />
+                        </div>
+
+                         <div class="row">
+                         <div class="mb-3">
+                        <label>Pendidikan terakhir</label>
+                        <select class="form-control" required>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="S1">S1</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="S2">S2</option>
+                            </select>
+
+                            <div class="row">
+                        <div class="mb-3 col-md-6">
+                        <label>WHatsapp</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                                <label>Pendapatan per Bulan</label>
+                            </div>
+                        
+                            <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Di bawah 2 juta
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    2 juta- 5 juta
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    6 juta -10 juta
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    DI atas 10 juta
+  </label>
+</div>
+
+
+                        
+
+    </div>
+
+
+    
+                        </div>
+
+                    
+            <div class="step d-none"  id="step3">
+                <h7>Data Orang tua (ibu)</h7>
+
+                 
+                    
+
+                      <div class="mb-3">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>No KTP</label>
+                        <input type="text" class="form-control" required />
+                        </div>
+
+                          <div class="mb-3">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" required />
+                        </div>
+
+                         <div class="row">
+                         <div class="mb-3">
+                        <label>Pendidikan terakhir</label>
+                        <select class="form-control" required>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="S1">S1</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="S2">S2</option>
+                            </select>
+
+                            <div class="row">
+                        <div class="mb-3 col-md-6">
+                        <label>WHatsapp</label>
+                        <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                                <label>Pendapatan per Bulan</label>
+                            </div>
+                        
+                            <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Di bawah 2 juta
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    2 juta- 5 juta
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    6 juta -10 juta
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    DI atas 10 juta
+  </label>
+</div>
+
+
+                        
+
+    </div>
+
+
+
+                </form>
+    <script>
+        function nextstep(step) {
+            const currentStep = document.getElementById('step'+ step);
+            const inputs = currentStep.querySelectorAll('input,textarea,select');
+        }
+
+        for(let input of inputs){
+            if(!input.checkvalidity()){
+                input.reportvalidity();
+                return;
+            }
+
+            currentStep.classlist.add('d-none');
+            document.getElementById('step'+ (step + 1)).classList.remove('d-none');
+
+            updateprogress(step+1)
+        }
+
+        function updateprogress(step) {
+let percent = (step/3) *100
+document.getElementById('progressbar').style.width = percent + '%';
+
+        }
+
+        
+    
+</script>
+</body>
+</html>

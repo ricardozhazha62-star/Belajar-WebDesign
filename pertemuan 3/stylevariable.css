@@ -1,0 +1,9 @@
+:root{
+--Primary-color : rgb(56, 237, 36);
+--secondary-color :   rgb(134, 116, 223);
+--text-color : #222;
+--card-radius : 12px;
+--Card-padding: 20px;
+--card-width: clamp(250px,30%,400px);
+
+}

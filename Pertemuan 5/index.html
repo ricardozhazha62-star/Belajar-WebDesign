@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <link rel="stylesheet" href="style.css"><link/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <button onclick="showAlert()">Touch me</button>
+    <br>
+    <label for="name">nama:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="username"> username</label>
+    <input type="text" id ="username" name="username">
+    <br>
+    <label for="Password">Password</label>
+    <input type="password" id="Password" name="Password">
+    <button onclick="getname()">Submit</button>
+    <br>
+    <label for="jarijari">jarijari</label>
+    <input type="number" id="jarijari" name="jarijari">
+    <button onclick="hitungluaslingkaran()">Hasil</button>
+
+
+    <script>
+    function getname() {
+        let name = document.getElementById("name").value ;
+        let username = document.getElementById("username").value ;
+        let Password = document.getElementById("Password").value ;
+        alert("nama anda adalah:"+ name +" "+ username);
+    }
+
+</script>
+</body>
+
+
+</html>

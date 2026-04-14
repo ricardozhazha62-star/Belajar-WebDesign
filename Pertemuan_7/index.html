@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal</title>
+<script src="script.js"></script>
+</head>
+<body>
+    <h1>Latihan switch case</h1>
+    <div id="output"></div>
+    <script>
+        function contohhari(){
+            let hari = 'selasa';
+            let bulan = 'januari';
+            let pesan ;
+            switch (hari + ' '+ bulan){
+                case 'senin januari':
+                    pesan = 'awal minggu pertama bekerja';
+                    break;
+                    
+                case 'jumat januari':
+                    pesan = 'akhir minggu pertama bekerja';
+                    break;
+                case 'selasa januari':
+                    pesan = 'awal minggu kedua bekerja';
+                    break
+                case 'jumat januari':
+                    pesan = 'awal minggu kedua bekerja';
+                    break;
+                
+                case 'senin januari':
+                    pesan = 'awal minggu ketiga bekerja';
+                    break;
+                
+                case 'jumat januari':
+                    pesan = 'awal minggu ketiga bekerja';
+                    break;
+                    
+                case 'senin januari':
+                    pesan = 'awal minggu keempat bekerja';
+                    break;
+                    
+                case 'jumat januari':
+                    pesan = 'awal minggu keempat bekerja';
+                    break;
+                default:
+                        pesan ='hari biasa di januari';
+            }
+            return 'contoh hari '+pesan;
+
+        }
+
+        function contohnilai(){
+            let nilai = 76;
+            let grade;
+            switch(true) {
+                case nilai >=90:
+                    grade='A';
+                    break;
+                    case nilai >=80:
+                    grade='B';
+                    break;
+                    case nilai >=70:
+                    grade='C';
+                    break;
+                    case nilai >=60:
+                    grade='D';
+                    break;
+                    default:
+                        grade = 'E';
+            }
+            return 'contoh nilai '+ grade;
+        }
+
+        function contohnested() {
+            let kategori = 'kopi';
+            let item = 'Latte';
+            let pesannested;
+
+            switch(kategori){
+                case 'kopi':
+                    switch (item){
+                        case 'Flat white':
+                            pesannested = 'Harga Flat white 5$';
+                            break;
+                            case 'Latte':
+                            pesannested = 'Harga Latte 8$';
+                            break;
+                            case 'Americano':
+                            pesannested = 'Harga Americano 3$';
+                            break;
+                    }
+                    break;
+                    case 'teh':
+                    switch (item){
+                        case 'Esteh':
+                            pesannested = 'Harga Esteh 2$';
+                            break;
+                            case 'Milktea':
+                            pesannested = 'Harga Milktea 4$';
+                            break;
+                            case 'Matcha':
+                            pesannested = 'Harga Matcha 10$';
+                            break;
+            }
+            break;
+            default:
+                pesannested = 'Kategori tidak terdaftar'
+
+        }
+        return 'contoh nested' + pesannested;
+    }
+        document.getElementById('output').innerHTML=`
+        <p>${contohhari()}</p>
+        <br>
+        <p>${contohnilai()}</p>
+        <br>
+        <p>${contohnested()}</p>
+        
+        `
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Cek umur</h1>
+        <label for="umur" >masukan umur:</label>
+        <input type="number" id="umur" placeholder="contoh : 18" />
+        <button onclick="cekumur()">Cek</button>
+        <p id="hasilumur"></p>
+        <br>
+        <br>
+        <H2>Login page</H2>
+        <label for="username">username :</label>
+        <input type="text" id="username" placeholder="masukan username anda">
+        <br>
+        <br>
+        <Label for="password">Password</Label>
+        <input type="password" id="password" placeholder="masukan pw">
+        <br>
+        <button onclick="login()">Masuk</button>
+        <p id="hasillogin"></p>
+        <br>
+        <br>
+        <h3>Diskon</h3>
+        <form id="formDiskon">
+            <label> <input type="checkbox" id = "isMember">Apakah anda membership</label>
+            <br>
+            <label> <input type="checkbox" id = "kantong">Apakah anda membawa kantong</label>
+            <br>
+            <label for="totalbelanja">Total belanja (Rp):</label>
+            <input type="number" id="totalbelanja" placeholder="Masukan total belanja" />
+            <button type="button" onclick="cekDiskon()">Cek diskon</button>
+        </form>
+        <p id="hasilDiskon"></p>
+        <br>
+        <br>
+        <h4>Cek Nilai Anda</h4>
+        <Label for="nilai">Masukan Skor Anda</Label>
+        <input type="number" id="nilai" placeholder="Nilai ujian anda">
+        <button onclick="ceknilai()">Cek</button>
+        <p id="CekNilai"></p>
+</body>
+</html>

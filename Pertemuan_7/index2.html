@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan tiket</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .btn {
+        background: darkblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background: navy;
+      }
+      #ringkasan {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      #namaError {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+</head>
+<body>
+    <h1>Pembelian Tiket Standup Comedy</h1>
+    
+    <label>Nama Pemesan</label>
+    <br>
+    <input type="text" id="nama" placeholder="Masukan nama anda" />
+    <br>
+    <span id="namaerror"></span>
+    <br>
+    <br>
+    <label>Pilih Acara</label>
+    <br>
+    <select id="Acara">
+        <option value="Maaf tapi ini lucu">Maaf tapi ini lucu</option>
+        <option value="Perjamuan maha lucu">Perjamuan maha lucu</option>
+        <option value="Pemuda tersesat">Pemuda tersesat</option>
+        <option value="Komedi mendidik">Komedi mendidik</option>
+    </select>
+    <br>
+    <br>
+    <label>Jumlah tiket:</label>
+    <input type="number" id="jumlah" value="1" min="1" max="10"/>
+    <p id="totalharga">Total = Rp.50000</p>
+
+    <button class="btn" id="pesanbtn">Pesan tiket</button>
+
+    <div id="ringkasan"></div>
+
+    <script>
+        const hargatiket = 50000;
+
+        document.getElementById('nama').onkeyup = function(){
+            let nama = this.value.trim();
+            if (nama.length < 3) {
+                document.getElementById('namaerror').innerText = 'nama minimal 3 huruf!!!';
+            }
+            else{
+                document.getElementById('namaerror').innerText = '';
+            }
+        };
+
+        document.getElementById('jumlah').onchange = function() {
+            let jumlah = parseInt(this.value);
+            let total = jumlah * hargatiket;
+            document.getElementById('totalharga').innerText = 'total :Rp' + total.toLocaleString();
+        };
+        document.getElementById('pesanbtn').onclick = function(){
+            let nama = document.getElementById('nama').value;
+            let Acara = document.getElementById('Acara').value;
+            let jumlah = document.getElementById('jumlah').value;
+            let total = jumlah * hargatiket;
+
+            document.getElementById('ringkasan').innerHTML=`
+            <h3>Ringkasan pesanan</h3>
+            <p>Nama : ${nama} </p>
+            <p>Acara : ${Acara} </p>
+            <p>jumlah tiket : ${jumlah} </p>
+            <p>Total bayar : ${total.toLocaleString()} </p>
+            `;
+        }
+    </script>
+</body>
+</html>

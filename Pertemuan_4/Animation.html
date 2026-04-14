@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: floralwhite;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .container {display: flex;
+         justify-content: center;
+         gap: 25px;
+         flex-wrap: wrap;
+        }
+        .box {
+            width: 200px;
+            height: 150px;
+            background: cornflowerblue;
+            color: antiquewhite;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        @keyframes movebox {
+            0%{
+                transform: translateX(0);
+                background-color: darkblue;
+            }
+            25% {
+                transform: translateY(50px);
+                transform: rotateX(200px);
+                background-color: firebrick;}
+            50% {
+                transform: translateX(100px)
+                ;
+                transform: translateY(100px)
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .duration {
+            animation: movebox 10s ease-in-out;
+        }
+        .iteration {
+            animation: movebox 10s ease-in-out infinite;
+
+        }
+        .direction {
+            animation: movebox 2s ease-in-out 4 alternate;
+        }
+        .fill {
+        animation: movebox 3s ease-in-out 4 forwards;
+        }
+    </style>
+</head>
+<body>
+    <h1>Css Animation</h1>
+    
+    <div class="container">
+        <div class="box duration">Durasi</div>
+        <div class="box iteration">Raffi Ireng</div>
+        <div class="box direction">Rp tu opo</div>
+        <div class="box fill">Beli blink fi</div>
+    </div>
+</body>
+</html>
