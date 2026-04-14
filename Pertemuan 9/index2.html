@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Pendaftaran Kursus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-header text-center">
+          <h4>Form Pendaftaran Kursus</h4>
+        </div>
+        <div class="card-body">
+          <!-- Step Indicator -->
+          <div class="mb-4">
+            <div class="progress">
+              <div id="progressBar" class="progress-bar" style="width: 33%"></div>
+            </div>
+          </div>
+
+          <form id="multiStepForm">
+            <!-- STEP 1: Data Peserta -->
+            <div class="step" id="step1">
+              <h5>Data Peserta</h5>
+
+              <div class="mb-3">
+                <label>Nama Lengkap</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label>No KTP</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="mb-3 pt-2">
+                <label>Tanggal Lahir</label>
+                <input type="date" class="form-control" required />
+              </div>
+              <div class="mb-3 pt-2">
+                <label>Agama</label>
+                <select class="form-control" required>
+                  <option value="islam">Islam</option>
+                  <option value="kristen">Kristen</option>
+                  <option value="katolik">Katolik</option>
+                  <option value="hindu">Hindu</option>
+                  <option value="buddha">Buddha</option>
+                </select>
+              </div>
+
+              <div class="row">
+                <div class="mb-3 pt-2 col-md-6">
+                  <label>Jenis Kelamin</label>
+                  <select class="form-control" required>
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                  </select>
+                </div>
+                <div class="mb-3 pt-2 col-md-6">
+                  <label>Jenis Tinggal</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
+                    <label class="form-check-label" for="radioDefault1"> Bersama ortu</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked />
+                    <label class="form-check-label" for="radioDefault2">Kos</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                    <label class="form-check-label" for="radioDefault3">Lainnya</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label>Email</label>
+                <input type="email" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label>No HP</label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
+            </div>
+
+            <!-- STEP 2: Data Orang Tua -->
+            <div class="step d-none" id="step2">
+              <h5>Data Orang Tua (Ayah) </h5>
+
+              <div class="mb-3">
+                <label>Nama Orang Tua (Ayah) </label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label>No HP Orang Tua(Ayah)</label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label>Pekerjaan</label>
+                <textarea class="form-control" required></textarea>
+              </div>
+
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Pendidikan</label>
+                  <textarea class="form-control" required></textarea>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label>Tempat Lahir</label>
+                  <textarea class="form-control" required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Penghasilan</label>
+                  <select name="" id "">
+                    <option value=""></option>
+                    <option value="1">Di bawah 2.000.000</option>
+                    <option value="2">2.000.000-5.000.000</option>
+                    <option value="3">Di atas 5.000.000</option>
+                  </select>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label>Nomor telpon</label>
+                  <input class="form-control" required></input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Whatsapp</label>
+                  <input class="form-control" required></input>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label>Email</label>
+                  <input class="form-control" required></input>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+              <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- STEP 3: Konfirmasi -->
+            <div class="step d-none" id="step3">
+              <h5>Data Ibu</h5>
+
+              <div class="mb-3">
+                <label>Nama Orang Tua (Ibu) </label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label>No HP Orang Tua(Ibu)</label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label>Pekerjaan</label>
+                <textarea class="form-control" required></textarea>
+              </div>
+
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Pendidikan</label>
+                  <textarea class="form-control" required></textarea>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label>Tempat Lahir</label>
+                  <textarea class="form-control" required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Penghasilan</label>
+                  <select name="" id "">
+                    <option value=""></option>
+                    <option value="1">Di bawah 2.000.000</option>
+                    <option value="2">2.000.000-5.000.000</option>
+                    <option value="3">Di atas 5.000.000</option>
+                  </select>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label>Nomor telpon</label>
+                  <input class="form-control" required></input>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label>Whatsapp</label>
+                  <input class="form-control" required></input>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label>Email</label>
+                  <input class="form-control" required></input>
+                </div>
+              </div>
+              
+
+              <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+
+          <!-- Alert sukses -->
+          <div id="successMessage" class="alert alert-success mt-3 d-none">✅ Pendaftaran berhasil dikirim!</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function nextStep(step) {
+        const currentStep = document.getElementById('step' + step);
+        const inputs = currentStep.querySelectorAll('input, textarea, select');
+
+        // Validasi
+        for (let input of inputs) {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
+          }
+        }
+
+        currentStep.classList.add('d-none');
+        document.getElementById('step' + (step + 1)).classList.remove('d-none');
+
+        updateProgress(step + 1);
+      }
+
+      function prevStep(step) {
+        document.getElementById('step' + step).classList.add('d-none');
+        document.getElementById('step' + (step - 1)).classList.remove('d-none');
+
+        updateProgress(step - 1);
+      }
+
+      function updateProgress(step) {
+        let percent = (step / 3) * 100;
+        document.getElementById('progressBar').style.width = percent + '%';
+      }
+
+      // Submit handler
+      document.getElementById('multiStepForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // cek semua input wajib
+        const inputs = document.querySelectorAll('input, textarea');
+        for (let input of inputs) {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
+          }
+        }
+
+        document.getElementById('multiStepForm').classList.add('d-none');
+        document.getElementById('successMessage').classList.remove('d-none');
+      }
+      );
+    </script>
+  </body>
+</html>

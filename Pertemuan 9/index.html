@@ -63,14 +63,14 @@
                         
 
                             <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-  <label class="form-check-label" for="checkDefault">
+  <input class="form-check-input" type="checkbox" value="" id="tinggal_rumah">
+  <label class="form-check-label" for="tinggal_rumah">
     Rumah
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
-  <label class="form-check-label" for="checkChecked">
+  <input class="form-check-input" type="checkbox" value="" id="tinggal_kos" checked>
+  <label class="form-check-label" for="tinggal_kos">
     Kos
   </label>
 </div>
@@ -130,7 +130,7 @@
     Bekerja
   
 
-<button type="button" class="btn btn-primary" onclick="nextstep(1)">Next</button>
+<button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
 
 
                         
@@ -145,7 +145,7 @@
 
                         </div>
 
-                    <div class="step d-none"  id="step3">
+                    <div class="step d-none"  id="step2">
                 <h6>Data Orang tua (ayah)</h6>
 
                       <div class="mb-3">
@@ -301,28 +301,54 @@
 
                 </form>
     <script>
-        function nextstep(step) {
-            const currentStep = document.getElementById('step'+ step);
-            const inputs = currentStep.querySelectorAll('input,textarea,select');
+    function nextStep(step) {
+    const currentStep = document.getElementById('step' + step);
+    const inputs = currentStep.querySelectorAll('input, textarea, select');
+
+    for (let input of inputs) {
+        if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
         }
+    }
 
-        for(let input of inputs){
-            if(!input.checkvalidity()){
-                input.reportvalidity();
-                return;
-            }
+    currentStep.classList.add('d-none');
+    document.getElementById('step' + (step + 1)).classList.remove('d-none');
 
-            currentStep.classlist.add('d-none');
-            document.getElementById('step'+ (step + 1)).classList.remove('d-none');
+    updateProgress(step + 1);
+}
 
-            updateprogress(step+1)
-        }
-
-        function updateprogress(step) {
+      
+        function updateProgress(step) {
 let percent = (step/3) *100
-document.getElementById('progressbar').style.width = percent + '%';
+document.getElementById('progressBar').style.width = percent + '%';
 
         }
+
+        function prevStep(step) {
+          document.getElementById('step'+ step). classList.add('d-none');
+          document.getElementById('step'+ (step - 1)).classList.remove('d-none');
+
+          updateProgress(step - 1);
+        }
+
+        document.getElementById('multistepform').addEventListener('submit', function (e) {
+          e.preventDefault();
+
+        const inputs = document.querySelectorAll('input,textarea');
+        for (let input of inputs){
+        if (!input.checkValidity()){
+          input.reportValidity();
+          return;
+        }
+      }
+      
+      document.getElementById('multistepform').classList.add('d-none');
+      document.getElementById('successMessage').classList.remove('d-none');
+
+        });
+    
+      
 
         
     
